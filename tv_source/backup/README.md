@@ -1,0 +1,1 @@
+backup 下的 LunaTV-config.json 不作任何修改，定期从 https://github.com/hafrey1/LunaTV-config 手动下载备份。

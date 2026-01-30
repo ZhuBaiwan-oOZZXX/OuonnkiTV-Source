@@ -1,0 +1,45 @@
+name: Update TV Source
+
+on:
+  schedule:
+    - cron: "0 12 * * *" # 每天北京时间晚上8点运行 (UTC 12点)
+  workflow_dispatch: # 支持手动触发
+
+jobs:
+  update-tv-source:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # 允许推送
+
+    steps:
+      # 1️⃣ 检出仓库
+      - uses: actions/checkout@v4
+
+      # 2️⃣ 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # 3️⃣ 运行下载和转换脚本（合并执行，确保下载成功后才转换）
+      - name: Download and Convert
+        run: |
+          node scripts/download_LunaTV_config.js
+          node scripts/convert2ouonnkitv.js
+
+      # 5️⃣ 提交并推送生成的文件
+      - name: Commit and push changes
+        run: |
+          # 配置 Git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 添加所有生成的文件
+          git add tv_source/
+
+          # 提交更新，如果没有变化则跳过
+          git commit -m "自动更新 TV 源数据 ($(date -d '+8 hour' +'%Y-%m-%d %H:%M:%S CST'))" || echo "⚠️ 没有文件变化可提交"
+
+          # 推送到远程 main 分支
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
