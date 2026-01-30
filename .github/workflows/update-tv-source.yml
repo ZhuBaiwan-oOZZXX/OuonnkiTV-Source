@@ -2,7 +2,7 @@ name: Update TV Source
 
 on:
   schedule:
-    - cron: "0 12 * * *" # 每天北京时间晚上8点运行 (UTC 12点)
+    - cron: "0 22 * * *" # 每天北京时间早上6点运行 (UTC 22点)
   workflow_dispatch: # 支持手动触发
 
 jobs:
@@ -20,17 +20,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       # 3️⃣ 运行下载和转换脚本（合并执行，确保下载成功后才转换）
       - name: Download and Convert
         run: |
+          set -e
           node scripts/download_LunaTV_config.js
           node scripts/convert2ouonnkitv.js
 
-      # 5️⃣ 提交并推送生成的文件
+      # 4️⃣ 提交并推送生成的文件
       - name: Commit and push changes
         run: |
+          # 检查是否有文件变化
+          if git diff --quiet HEAD -- tv_source/; then
+            echo "✅ 数据源没有变化，无需提交"
+            exit 0
+          fi
+
           # 配置 Git
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -38,8 +45,8 @@ jobs:
           # 添加所有生成的文件
           git add tv_source/
 
-          # 提交更新，如果没有变化则跳过
-          git commit -m "自动更新 TV 源数据 ($(date -d '+8 hour' +'%Y-%m-%d %H:%M:%S CST'))" || echo "⚠️ 没有文件变化可提交"
+          # 提交更新
+          git commit -m "自动更新 TV 源数据 ($(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S CST'))"
 
           # 推送到远程 main 分支
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
