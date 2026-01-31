@@ -1,43 +1,38 @@
-# OuonnkiTV 视频源自动转换项目
+# OuonnkiTV Source
 
-本项目自动从 [LunaTV-config](https://github.com/hafrey1/LunaTV-config) 获取每日检测的视频源配置，并将其转换为 [OuonnkiTV](https://github.com/Ouonnki/OuonnkiTV) 可用的格式。
+为 [OuonnkiTV](https://github.com/Ouonnki/OuonnkiTV) 提供视频源配置。
 
-## 自动更新
+## 配置文件
 
-每天北京时间早上 6 点（UTC 22:00）自动执行：
-
-1. **下载** - 从 LunaTV-config 获取最新的视频源配置
-2. **转换** - 将 LunaTV 格式转换为 OuonnkiTV 兼容的 JSON 格式
-3. **过滤** - 生成三种不同版本的配置文件
-4. **推送** - 将更新后的文件提交到本仓库
-
-## 生成的配置文件
-
-所有配置文件位于 `tv_source/OuonnkiTV/` 目录。
-
-### 精简版（推荐）
-
-`clean-no-adult.json`：过滤了标记注释和含成人内容的视频源。
+- 轻量版（lite.json）：仅包含 API 可访问且搜索成功的非成人视频源。
 
 ```
-https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/clean-no-adult.json
+https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/lite.json
 ```
 
-### 清洁版
-
-`clean.json`：过滤了标记注释的视频源。
+- 完整版（full.json）：包含所有 API 可访问且搜索成功的视频源（包括成人内容）。
 
 ```
-https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/clean.json
+https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/full.json
 ```
 
-### 完整版
+## 工作流程
 
-`raw.json`：包含所有视频源。
+通过四个脚本按顺序处理视频源，在每天北京时间早上 6 点自动执行并推送至仓库：
 
-```
-https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/raw.json
-```
+| 脚本                         | 功能                  | 输出                      |
+| ---------------------------- | --------------------- | ------------------------- |
+| 01_download_lunatv_config.js | 下载 LunaTV 原始配置  | LunaTV-config.json        |
+| 02_process_lunatv_config.js  | 清理配置数据          | LunaTV-processed.json     |
+| 03_check_video_sources.js    | 检测源可用性          | LunaTV-check-history.json |
+| 04_convert_ouonnkitv.js      | 转换为 OuonnkiTV 格式 | full.json, lite.json      |
+
+### 检测说明
+
+- 使用代理访问 API（避免网络限制）
+- 测试关键词："斗罗大陆"
+- 搜索状态：`success`（成功）、`no_results`（无结果）、`mismatch`（结果不匹配）、`search_failed`（搜索失败）
+- 保留最近 30 条检测历史记录
 
 ## 特别感谢
 

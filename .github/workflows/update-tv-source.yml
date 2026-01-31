@@ -22,12 +22,14 @@ jobs:
         with:
           node-version: "22"
 
-      # 3️⃣ 运行下载和转换脚本（合并执行，确保下载成功后才转换）
-      - name: Download and Convert
+      # 3️⃣ 运行所有脚本（按顺序执行）
+      - name: Run all scripts
         run: |
           set -e
-          node scripts/download_LunaTV_config.js
-          node scripts/convert2ouonnkitv.js
+          node scripts/01_download_lunatv_config.js
+          node scripts/02_process_lunatv_config.js
+          node scripts/03_check_video_sources.js
+          node scripts/04_convert_ouonnkitv.js
 
       # 4️⃣ 提交并推送生成的文件
       - name: Commit and push changes
