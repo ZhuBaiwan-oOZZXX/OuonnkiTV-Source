@@ -175,13 +175,6 @@
     "isEnabled": true
   },
   {
-    "id": "金蝉影视",
-    "name": "金蝉影视",
-    "url": "https://zy.jinchancaiji.com/api.php/provide/vod",
-    "detailUrl": "https://zy.jinchancaiji.com/api.php/provide/vod",
-    "isEnabled": true
-  },
-  {
     "id": "量子影视",
     "name": "量子影视",
     "url": "https://cj.lziapi.com/api.php/provide/vod",
@@ -200,13 +193,6 @@
     "name": "无尽影视",
     "url": "https://api.wujinapi.com/api.php/provide/vod",
     "detailUrl": "https://api.wujinapi.com/api.php/provide/vod",
-    "isEnabled": true
-  },
-  {
-    "id": "优质资源",
-    "name": "优质资源",
-    "url": "https://api.yzzy-api.com/inc/apijson.php",
-    "detailUrl": "https://api.yzzy-api.com/inc/apijson.php",
     "isEnabled": true
   },
   {
