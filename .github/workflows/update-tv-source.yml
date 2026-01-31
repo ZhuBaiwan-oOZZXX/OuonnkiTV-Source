@@ -22,7 +22,11 @@ jobs:
         with:
           node-version: "22"
 
-      # 3️⃣ 运行所有脚本（按顺序执行）
+      # 3️⃣ 安装依赖
+      - name: Install dependencies
+        run: npm install
+
+      # 4️⃣ 运行所有脚本
       - name: Run all scripts
         run: |
           set -e
@@ -31,11 +35,11 @@ jobs:
           node scripts/03_check_video_sources.js
           node scripts/04_convert_ouonnkitv.js
 
-      # 4️⃣ 提交并推送生成的文件
+      # 5️⃣ 提交并推送生成的文件
       - name: Commit and push changes
         run: |
           # 检查是否有文件变化
-          if git diff --quiet HEAD -- tv_source/; then
+          if [ -z "$(git status --porcelain tv_source/)" ]; then
             echo "✅ 数据源没有变化，无需提交"
             exit 0
           fi
