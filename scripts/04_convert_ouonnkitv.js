@@ -3,23 +3,23 @@ const path = require("path");
 
 const inputFile = path.join(__dirname, "..", "tv_source", "LunaTV", "LunaTV-check-history.json");
 const outputDir = path.join(__dirname, "..", "tv_source", "OuonnkiTV");
+const LITE_LIMIT = 15;
 
-function convertRecord(record) {
-  return {
-    id: record.name,
-    name: record.name,
-    url: record.api,
-    detailUrl: record.detail || record.api,
-    isEnabled: true
-  };
+const outputs = [
+  { name: "full.json", filter: (r) => r },
+  { name: "full-noadult.json", filter: (r) => r.filter((x) => !x.isAdult) },
+  { name: "lite.json", filter: (r) => r.filter((x) => !x.isAdult).slice(0, LITE_LIMIT) },
+  { name: "adult.json", filter: (r) => r.filter((x) => x.isAdult) },
+];
+
+function convertRecord(r) {
+  return { id: r.name, name: r.name, url: r.api, detailUrl: r.detail || r.api, isEnabled: true };
 }
 
-function filterSuccess(results) {
-  return results.filter(r => r.apiAccessible && r.searchStatus === "success");
-}
-
-function filterNoAdult(results) {
-  return results.filter(r => !r.isAdult);
+function saveJson(filename, records) {
+  const data = records.map(convertRecord);
+  fs.writeFileSync(path.join(outputDir, filename), JSON.stringify(data, null, 2), "utf8");
+  return data.length;
 }
 
 (async () => {
@@ -28,25 +28,17 @@ function filterNoAdult(results) {
       console.error(`错误: 找不到输入文件: ${inputFile}`);
       process.exit(1);
     }
+    if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir, { recursive: true });
+    const results = JSON.parse(fs.readFileSync(inputFile, "utf8"))[0].results;
+    const sorted = results
+      .filter((r) => r.searchStatus === "success")
+      .sort((a, b) => (a.searchDuration || Infinity) - (b.searchDuration || Infinity));
+
+    for (const { name, filter } of outputs) {
+      const count = saveJson(name, filter(sorted));
+      console.log(`✓ 已生成: ${name} (${count} 个视频源)`);
     }
-
-    const history = JSON.parse(fs.readFileSync(inputFile, "utf8"));
-    const latestRecord = history[0];
-    const results = latestRecord.results;
-
-    const successResults = filterSuccess(results);
-    const fullData = successResults.map(convertRecord);
-    fs.writeFileSync(path.join(outputDir, "full.json"), JSON.stringify(fullData, null, 2), "utf8");
-    console.log(`✓ 已生成: full.json (${fullData.length} 个视频源)`);
-
-    const cleanResults = filterNoAdult(successResults);
-    const liteData = cleanResults.map(convertRecord);
-    fs.writeFileSync(path.join(outputDir, "lite.json"), JSON.stringify(liteData, null, 2), "utf8");
-    console.log(`✓ 已生成: lite.json (${liteData.length} 个视频源)`);
-
     console.log("\n所有文件处理完成！");
   } catch (error) {
     console.error(`\n错误: ${error.message}`);

@@ -4,28 +4,40 @@
 
 ## 配置文件
 
-- 轻量版（lite.json）：筛选后的视频源
+- 轻量版（lite.json）：筛选后的视频源（不含成人内容，按响应速度排序取前15个）
 
 ```
 https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/lite.json
 ```
 
-- 完整版（full.json）：筛选后的视频源（未过滤含成人内容的视频源）
+- 完整纯净版（full-noadult.json）：筛选后的视频源（不含成人内容）
+
+```
+https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/full-noadult.json
+```
+
+- 完整版（full.json）：筛选后的视频源（包含成人内容）
 
 ```
 https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/full.json
+```
+
+- 成人版（adult.json）：仅成人内容视频源
+
+```
+https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/adult.json
 ```
 
 ## 工作流程
 
 通过四个脚本按顺序处理视频源，在每天北京时间早上 6 点自动执行并推送至仓库：
 
-| 脚本                         | 功能                  | 输出                      |
-| ---------------------------- | --------------------- | ------------------------- |
-| 01_download_lunatv_config.js | 下载 LunaTV 原始配置  | LunaTV-config.json        |
-| 02_process_lunatv_config.js  | 清理配置数据          | LunaTV-processed.json     |
-| 03_check_video_sources.js    | 检测源可用性          | LunaTV-check-history.json |
-| 04_convert_ouonnkitv.js      | 转换为 OuonnkiTV 格式 | full.json, lite.json      |
+| 脚本                         | 功能                  | 输出                                                |
+| ---------------------------- | --------------------- | --------------------------------------------------- |
+| 01_download_lunatv_config.js | 下载 LunaTV 原始配置  | LunaTV-config.json                                  |
+| 02_process_lunatv_config.js  | 清理配置数据          | LunaTV-processed.json                               |
+| 03_check_video_sources.js    | 检测源可用性          | LunaTV-check-history.json                           |
+| 04_convert_ouonnkitv.js      | 转换为 OuonnkiTV 格式 | full.json, full-noadult.json, lite.json, adult.json |
 
 ## 感谢
 
@@ -46,9 +58,9 @@ https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/m
 
 ## 一、定义与范围
 
-* **本仓库**：指本 GitHub 仓库及其直接或间接相关的其他仓库。
-* **维护者**：指本仓库的管理员、维护者及任何参与内容整理与分享的人员。
-* **仓库内容**：指本仓库中提供的全部配置文件、源定义、代码片段、文档说明及引用的外部资源信息。
+- **本仓库**：指本 GitHub 仓库及其直接或间接相关的其他仓库。
+- **维护者**：指本仓库的管理员、维护者及任何参与内容整理与分享的人员。
+- **仓库内容**：指本仓库中提供的全部配置文件、源定义、代码片段、文档说明及引用的外部资源信息。
 
 ---
 
@@ -66,11 +78,11 @@ https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/m
 
 本仓库及其内容均以 **"现状（AS IS）"** 方式提供，维护者不作出任何形式的明示或暗示担保，包括但不限于：
 
-* 合法性
-* 准确性
-* 完整性
-* 可用性
-* 适用于特定目的
+- 合法性
+- 准确性
+- 完整性
+- 可用性
+- 适用于特定目的
 
 使用本仓库内容所产生的一切风险均由使用者自行承担。
 
@@ -126,8 +138,6 @@ https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/m
 
 1. 维护者保留在不另行通知的情况下，随时修改或补充本免责声明的权利。
 2. 任何对本仓库内容的访问、使用、复制、修改或分发行为，均视为已充分阅读并接受本免责声明的全部内容。
-
-
 
 **若您不同意本免责声明中的任何条款，请立即停止使用并删除本仓库的全部内容。**
 
