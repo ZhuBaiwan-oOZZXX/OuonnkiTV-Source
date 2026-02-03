@@ -3,8 +3,7 @@ const path = require("path");
 const axios = require("axios");
 
 const CONFIG_PATH = path.join(__dirname, "..", "tv_source", "LunaTV", "LunaTV-processed.json");
-const HISTORY_PATH = path.join(__dirname, "..", "tv_source", "LunaTV", "LunaTV-check-history.json");
-const MAX_HISTORY = 30;
+const OUTPUT_PATH = path.join(__dirname, "..", "tv_source", "LunaTV", "LunaTV-check-result.json");
 
 const CONFIG = {
   timeout: 4000,
@@ -132,7 +131,7 @@ async function runWithLimit(tasks, limit, onComplete) {
     hour12: false,
   });
 
-  const currentRecord = {
+  const result = {
     date: formattedDate,
     keyword: CONFIG.keyword,
     useProxy: CONFIG.useProxy,
@@ -146,23 +145,8 @@ async function runWithLimit(tasks, limit, onComplete) {
     results,
   };
 
-  let history = [];
-  if (fs.existsSync(HISTORY_PATH)) {
-    try {
-      history = JSON.parse(fs.readFileSync(HISTORY_PATH, "utf-8"));
-      if (!Array.isArray(history)) history = [];
-    } catch {
-      history = [];
-    }
-  }
-
-  history.unshift(currentRecord);
-  if (history.length > MAX_HISTORY) {
-    history = history.slice(0, MAX_HISTORY);
-  }
-
-  fs.writeFileSync(HISTORY_PATH, JSON.stringify(history, null, 2), "utf-8");
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(result, null, 2), "utf-8");
 
   console.log(`[Done] ${sources.length} sources | ${accessible} accessible | ${searchOk} search ok | ${duration}s`);
-  console.log(`[Info] 历史记录已保存: ${HISTORY_PATH} (共 ${history.length} 条)`);
+  console.log(`[Info] 检测结果已保存: ${OUTPUT_PATH}`);
 })();

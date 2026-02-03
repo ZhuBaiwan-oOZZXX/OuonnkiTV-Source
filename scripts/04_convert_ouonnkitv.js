@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const inputFile = path.join(__dirname, "..", "tv_source", "LunaTV", "LunaTV-check-history.json");
+const inputFile = path.join(__dirname, "..", "tv_source", "LunaTV", "LunaTV-check-result.json");
 const outputDir = path.join(__dirname, "..", "tv_source", "OuonnkiTV");
 const LITE_LIMIT = 15;
 
@@ -30,7 +30,7 @@ function saveJson(filename, records) {
     }
     if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
-    const results = JSON.parse(fs.readFileSync(inputFile, "utf8"))[0].results;
+    const results = JSON.parse(fs.readFileSync(inputFile, "utf8")).results;
     const sorted = results
       .filter((r) => r.searchStatus === "success")
       .sort((a, b) => (a.searchDuration || Infinity) - (b.searchDuration || Infinity));
