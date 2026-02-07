@@ -26,14 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4️⃣ 运行所有脚本
-      - name: Run all scripts
-        run: |
-          set -e
-          node scripts/01_download_lunatv_config.js
-          node scripts/02_process_lunatv_config.js
-          node scripts/03_check_video_sources.js
-          node scripts/04_convert_ouonnkitv.js
+      # 4️⃣ 运行一键脚本
+      - name: Run start script
+        run: node start.js
 
       # 5️⃣ 提交并推送生成的文件
       - name: Commit and push changes

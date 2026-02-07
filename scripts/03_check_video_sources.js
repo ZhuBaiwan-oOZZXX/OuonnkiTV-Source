@@ -12,7 +12,7 @@ const CONFIG = {
   retryDelay: 1000,
   keyword: process.argv[2] || "斗罗大陆",
   headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" },
-  useProxy: true,
+  useProxy: false,
   proxyUrl: "https://kuayu.hellow.eu.org",
 };
 

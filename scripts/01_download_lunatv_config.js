@@ -2,6 +2,7 @@ const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
 
+const proxyUrl = "https://kuayu.hellow.eu.org";
 const url = "https://raw.githubusercontent.com/hafrey1/LunaTV-config/refs/heads/main/LunaTV-config.json";
 const targetDir = path.join(__dirname, "..", "tv_source", "LunaTV");
 const filepath = path.join(targetDir, "LunaTV-config.json");
@@ -14,9 +15,18 @@ const filepath = path.join(targetDir, "LunaTV-config.json");
 
     console.log("正在下载: LunaTV-config.json");
 
-    const response = await axios.get(url, { responseType: "text" });
-    fs.writeFileSync(filepath, response.data, "utf8");
+    let response;
+    try {
+      response = await axios.get(url, { responseType: "text" });
+      console.log("✓ 直接下载成功");
+    } catch (error) {
+      console.log("直接下载失败，尝试使用代理...");
+      const proxiedUrl = `${proxyUrl}/${url}`;
+      response = await axios.get(proxiedUrl, { responseType: "text" });
+      console.log("✓ 代理下载成功");
+    }
 
+    fs.writeFileSync(filepath, response.data, "utf8");
     console.log("✓ 已保存: LunaTV-config.json");
   } catch (error) {
     console.error(`错误: ${error.message}`);

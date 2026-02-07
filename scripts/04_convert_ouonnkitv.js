@@ -39,7 +39,6 @@ function saveJson(filename, records) {
       const count = saveJson(name, filter(sorted));
       console.log(`✓ 已生成: ${name} (${count} 个视频源)`);
     }
-    console.log("\n所有文件处理完成！");
   } catch (error) {
     console.error(`\n错误: ${error.message}`);
     process.exit(1);
