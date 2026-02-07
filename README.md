@@ -28,16 +28,54 @@ https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/m
 https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/main/tv_source/OuonnkiTV/adult.json
 ```
 
-## 工作流程
+## 本地运行
 
-通过四个脚本按顺序处理视频源，在每天北京时间早上 6 点自动执行并推送至仓库：
+### 一键启动
+
+```bash
+node start.js
+```
+
+一键执行所有处理步骤：下载 → 处理 → 检测 → 转换。
+
+### 分步运行
+
+分步运行需要按照以下顺序执行每个脚本：
 
 | 脚本                         | 功能                  | 输出                                                |
 | ---------------------------- | --------------------- | --------------------------------------------------- |
 | 01_download_lunatv_config.js | 下载 LunaTV 原始配置  | LunaTV-config.json                                  |
 | 02_process_lunatv_config.js  | 清理配置数据          | LunaTV-processed.json                               |
-| 03_check_video_sources.js    | 检测源可用性          | LunaTV-check-history.json                           |
+| 03_check_video_sources.js    | 检测源可用性          | LunaTV-check-result.json                            |
 | 04_convert_ouonnkitv.js      | 转换为 OuonnkiTV 格式 | full.json, full-noadult.json, lite.json, adult.json |
+
+### 配置说明
+
+编辑 `config.js` 可自定义以下配置：
+
+```javascript
+module.exports = {
+  proxy: {
+    url: "",                              // 代理 URL，用于下载和检测视频源
+    download: true,                       // 下载视频源时使用代理（默认开启）
+    check: false,                         // 检测视频源时使用代理（默认关闭）
+  },
+  check: {
+    timeout: 4000,        // 请求超时时间（毫秒）
+    concurrent: 30,       // 并发检测数量
+    maxRetry: 2,          // 失败重试次数
+    retryDelay: 1000,     // 重试间隔（毫秒）
+    keyword: "斗罗大陆",   // 检测用的搜索关键词
+    headers: { ... },     // HTTP 请求头
+  },
+};
+```
+
+代理 URL 填写后将按照 `https://{proxy.url}/原始URL` 进行请求，请注意代理 URL 满足此用法，留空表示不启用。
+
+## 自动更新
+
+GitHub Actions 每天北京时间早上 6 点自动执行 `start.js` 并推送更新至仓库。
 
 ## 感谢
 
@@ -52,6 +90,7 @@ https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/m
 # 免责声明
 
 > **在使用本仓库前，请务必仔细阅读本声明。**
+>
 > 任何以任何形式访问、使用、复制、修改或分发本仓库内容的行为，均视为已阅读并同意本免责声明的全部条款。
 
 ---
@@ -76,7 +115,7 @@ https://raw.githubusercontent.com/ZhuBaiwan-oOZZXX/OuonnkiTV-Source/refs/heads/m
 
 ## 三、无任何担保声明
 
-本仓库及其内容均以 **"现状（AS IS）"** 方式提供，维护者不作出任何形式的明示或暗示担保，包括但不限于：
+本仓库及其内容均以 **“现状（AS IS）”** 方式提供，维护者不作出任何形式的明示或暗示担保，包括但不限于：
 
 - 合法性
 - 准确性

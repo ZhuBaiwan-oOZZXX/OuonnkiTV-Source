@@ -1,19 +1,20 @@
 const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
+const appConfig = require("../config.js");
 
 const CONFIG_PATH = path.join(__dirname, "..", "tv_source", "LunaTV", "LunaTV-processed.json");
 const OUTPUT_PATH = path.join(__dirname, "..", "tv_source", "LunaTV", "LunaTV-check-result.json");
 
 const CONFIG = {
-  timeout: 4000,
-  concurrent: 30,
-  maxRetry: 2,
-  retryDelay: 1000,
-  keyword: process.argv[2] || "斗罗大陆",
-  headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" },
-  useProxy: false,
-  proxyUrl: "https://kuayu.hellow.eu.org",
+  timeout: appConfig.check.timeout,
+  concurrent: appConfig.check.concurrent,
+  maxRetry: appConfig.check.maxRetry,
+  retryDelay: appConfig.check.retryDelay,
+  keyword: appConfig.check.keyword,
+  headers: appConfig.check.headers,
+  useProxy: appConfig.proxy.url && appConfig.proxy.check,
+  proxyUrl: appConfig.proxy.url,
 };
 
 function getProxiedUrl(apiUrl) {
