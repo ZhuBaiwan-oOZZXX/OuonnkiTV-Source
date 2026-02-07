@@ -56,9 +56,9 @@ node start.js
 ```javascript
 module.exports = {
   proxy: {
-    url: "",                              // 代理 URL，用于下载和检测视频源
+    url: "",                              // 代理 URL，用于下载和检测视频源（已内置）
     download: true,                       // 下载视频源时使用代理（默认开启）
-    check: false,                         // 检测视频源时使用代理（默认关闭）
+    check: true,                         // 检测视频源时使用代理（默认开启）
   },
   check: {
     timeout: 4000,        // 请求超时时间（毫秒）

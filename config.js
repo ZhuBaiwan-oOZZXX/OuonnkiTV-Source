@@ -2,7 +2,7 @@ module.exports = {
   proxy: {
     url: "https://kuayu.hellow.eu.org",
     download: true,
-    check: false,
+    check: true,
   },
   check: {
     timeout: 4000,
