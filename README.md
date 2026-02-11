@@ -61,7 +61,7 @@ module.exports = {
     check: true,                         // 检测视频源时使用代理（默认开启）
   },
   check: {
-    timeout: 4000,        // 请求超时时间（毫秒）
+    timeout: 5000,        // 请求超时时间（毫秒）
     concurrent: 30,       // 并发检测数量
     maxRetry: 2,          // 失败重试次数
     retryDelay: 1000,     // 重试间隔（毫秒）

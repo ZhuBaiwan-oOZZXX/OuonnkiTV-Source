@@ -5,7 +5,7 @@ module.exports = {
     check: true,
   },
   check: {
-    timeout: 4000,
+    timeout: 5000,
     concurrent: 30,
     maxRetry: 2,
     retryDelay: 1000,
