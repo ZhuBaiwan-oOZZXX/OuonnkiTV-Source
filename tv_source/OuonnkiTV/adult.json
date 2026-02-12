@@ -35,6 +35,13 @@
     "isEnabled": true
   },
   {
+    "id": "滴滴资源",
+    "name": "滴滴资源",
+    "url": "https://api.ddapi.cc/api.php/provide/vod",
+    "detailUrl": "https://api.ddapi.cc/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
     "id": "精品资源",
     "name": "精品资源",
     "url": "https://www.jingpinx.com/api.php/provide/vod",
@@ -49,24 +56,17 @@
     "isEnabled": true
   },
   {
+    "id": "幸资源",
+    "name": "幸资源",
+    "url": "https://xzybb2.com/api.php/provide/vod",
+    "detailUrl": "https://xzybb2.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
     "id": "杏吧资源",
     "name": "杏吧资源",
     "url": "https://xingba222.com/api.php/provide/vod",
     "detailUrl": "https://xingba222.com/api.php/provide/vod",
-    "isEnabled": true
-  },
-  {
-    "id": "滴滴资源",
-    "name": "滴滴资源",
-    "url": "https://api.ddapi.cc/api.php/provide/vod",
-    "detailUrl": "https://api.ddapi.cc/api.php/provide/vod",
-    "isEnabled": true
-  },
-  {
-    "id": "百万资源",
-    "name": "百万资源",
-    "url": "https://api.bwzyz.com/api.php/provide/vod",
-    "detailUrl": "https://api.bwzyz.com/api.php/provide/vod",
     "isEnabled": true
   },
   {
@@ -77,6 +77,13 @@
     "isEnabled": true
   },
   {
+    "id": "百万资源",
+    "name": "百万资源",
+    "url": "https://api.bwzyz.com/api.php/provide/vod",
+    "detailUrl": "https://api.bwzyz.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
     "id": "鲨鱼资源",
     "name": "鲨鱼资源",
     "url": "https://shayuapi.com/api.php/provide/vod",
@@ -84,10 +91,10 @@
     "isEnabled": true
   },
   {
-    "id": "番号资源",
-    "name": "番号资源",
-    "url": "http://fhapi9.com/api.php/provide/vod",
-    "detailUrl": "http://fhapi9.com/api.php/provide/vod",
+    "id": "辣椒资源",
+    "name": "辣椒资源",
+    "url": "https://apilj.com/api.php/provide/vod",
+    "detailUrl": "https://apilj.com/api.php/provide/vod",
     "isEnabled": true
   },
   {
@@ -112,6 +119,20 @@
     "isEnabled": true
   },
   {
+    "id": "番号资源",
+    "name": "番号资源",
+    "url": "http://fhapi9.com/api.php/provide/vod",
+    "detailUrl": "http://fhapi9.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "黄色仓库",
+    "name": "黄色仓库",
+    "url": "https://hsckzy.xyz/api.php/provide/vod",
+    "detailUrl": "https://hsckzy.xyz/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
     "id": "黑料资源",
     "name": "黑料资源",
     "url": "https://www.heiliaozyapi.com/api.php/provide/vod",
@@ -126,24 +147,10 @@
     "isEnabled": true
   },
   {
-    "id": "黄色仓库",
-    "name": "黄色仓库",
-    "url": "https://hsckzy.xyz/api.php/provide/vod",
-    "detailUrl": "https://hsckzy.xyz/api.php/provide/vod",
-    "isEnabled": true
-  },
-  {
     "id": "AIvin",
     "name": "AIvin",
     "url": "http://lbapiby.com/api.php/provide/vod",
     "detailUrl": "http://lbapiby.com/api.php/provide/vod",
-    "isEnabled": true
-  },
-  {
-    "id": "辣椒资源",
-    "name": "辣椒资源",
-    "url": "https://apilj.com/api.php/provide/vod",
-    "detailUrl": "https://apilj.com/api.php/provide/vod",
     "isEnabled": true
   },
   {
