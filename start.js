@@ -2,12 +2,7 @@ const { execSync } = require("child_process");
 const path = require("path");
 const config = require("./config.js");
 
-const scripts = [
-  "01_download_lunatv_config.js",
-  "02_process_lunatv_config.js",
-  "03_check_video_sources.js",
-  "04_convert_ouonnkitv.js",
-];
+const scripts = ["01_download_lunatv_config.js", "02_process_lunatv_config.js", "03_check_video_sources.js", "04_convert_ouonnkitv.js"];
 
 const scriptsDir = path.join(__dirname, "scripts");
 
@@ -26,6 +21,7 @@ function sleep(ms) {
   console.log(`  下载使用代理: ${useProxyDownload ? "是" : "否"}`);
   console.log(`  检测使用代理: ${useProxyCheck ? "是" : "否"}`);
   console.log(`  检测关键词: ${config.check.keyword}`);
+  console.log(`  成人检测关键词: ${config.check.adultKeyword || config.check.keyword}`);
   console.log(`  超时时间: ${config.check.timeout}ms`);
   console.log(`  并发数: ${config.check.concurrent}`);
   console.log("");

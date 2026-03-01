@@ -12,6 +12,7 @@ const CONFIG = {
   maxRetry: appConfig.check.maxRetry,
   retryDelay: appConfig.check.retryDelay,
   keyword: appConfig.check.keyword,
+  adultKeyword: appConfig.check.adultKeyword,
   headers: appConfig.check.headers,
   useProxy: appConfig.proxy.url && appConfig.proxy.check,
   proxyUrl: appConfig.proxy.url,
@@ -98,7 +99,8 @@ async function runWithLimit(tasks, limit, onComplete) {
   const startTime = Date.now();
   const tasks = sources.map((s) => async () => {
     const proxiedApi = getProxiedUrl(s.api);
-    const result = await checkSource(proxiedApi, CONFIG.keyword);
+    const keyword = s.isAdult ? CONFIG.adultKeyword || CONFIG.keyword : CONFIG.keyword;
+    const result = await checkSource(proxiedApi, keyword);
     return {
       name: s.name,
       api: s.api,
@@ -135,6 +137,7 @@ async function runWithLimit(tasks, limit, onComplete) {
   const result = {
     date: formattedDate,
     keyword: CONFIG.keyword,
+    adultKeyword: CONFIG.adultKeyword,
     useProxy: CONFIG.useProxy,
     proxyUrl: CONFIG.proxyUrl,
     duration: `${duration}s`,
