@@ -1,5 +1,5 @@
 {
-  "date": "2026/03/02 06:20",
+  "date": "2026/03/03 06:23",
   "keyword": "斗罗大陆",
   "adultKeyword": "三上悠",
   "useProxy": true,
@@ -16,7 +16,7 @@
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 2445,
+      "searchDuration": 2067,
       "useProxy": true
     },
     {
@@ -24,7 +24,7 @@
       "api": "https://caiji.dbzy5.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1782,
+      "searchDuration": 2027,
       "useProxy": true
     },
     {
@@ -32,7 +32,7 @@
       "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1388,
+      "searchDuration": 2130,
       "useProxy": true
     },
     {
@@ -40,7 +40,7 @@
       "api": "https://wolongzyw.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 780,
+      "searchDuration": 683,
       "useProxy": true
     },
     {
@@ -48,7 +48,7 @@
       "api": "https://ikunzyapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 524,
+      "searchDuration": 470,
       "useProxy": true
     },
     {
@@ -64,7 +64,7 @@
       "api": "https://api.maoyanapi.top/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1702,
+      "searchDuration": 1790,
       "useProxy": true
     },
     {
@@ -72,7 +72,7 @@
       "api": "https://cj.lzcaiji.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1047,
+      "searchDuration": 867,
       "useProxy": true
     },
     {
@@ -80,7 +80,7 @@
       "api": "https://360zyzz.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 703,
+      "searchDuration": 714,
       "useProxy": true
     },
     {
@@ -88,7 +88,7 @@
       "api": "https://jszyapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 594,
+      "searchDuration": 485,
       "useProxy": true
     },
     {
@@ -96,7 +96,7 @@
       "api": "https://www.mdzyapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 2150,
+      "searchDuration": 2586,
       "useProxy": true
     },
     {
@@ -112,7 +112,7 @@
       "api": "https://bfzyapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 612,
+      "searchDuration": 1109,
       "useProxy": true
     },
     {
@@ -120,7 +120,7 @@
       "api": "https://api.zuidapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 992,
+      "searchDuration": 1118,
       "useProxy": true
     },
     {
@@ -128,7 +128,7 @@
       "api": "https://api.wujinapi.me/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1135,
+      "searchDuration": 1133,
       "useProxy": true
     },
     {
@@ -136,7 +136,7 @@
       "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1928,
+      "searchDuration": 1874,
       "useProxy": true
     },
     {
@@ -144,7 +144,7 @@
       "api": "https://api.wwzy.tv/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "no_results",
-      "searchDuration": 651,
+      "searchDuration": 811,
       "useProxy": true
     },
     {
@@ -152,7 +152,7 @@
       "api": "https://subocaiji.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1438,
+      "searchDuration": 1402,
       "useProxy": true
     },
     {
@@ -160,7 +160,7 @@
       "api": "https://jinyingzy.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1537,
+      "searchDuration": 1820,
       "useProxy": true
     },
     {
@@ -168,7 +168,7 @@
       "api": "https://p2100.net/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 779,
+      "searchDuration": 824,
       "useProxy": true
     },
     {
@@ -176,7 +176,7 @@
       "api": "https://api.ukuapi88.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1015,
+      "searchDuration": 836,
       "useProxy": true
     },
     {
@@ -184,7 +184,7 @@
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "no_results",
-      "searchDuration": 250,
+      "searchDuration": 191,
       "useProxy": true
     },
     {
@@ -192,7 +192,7 @@
       "api": "https://www.hongniuzy2.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1238,
+      "searchDuration": 993,
       "useProxy": true
     },
     {
@@ -200,7 +200,7 @@
       "api": "https://caiji.moduapi.cc/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1993,
+      "searchDuration": 1940,
       "useProxy": true
     },
     {
@@ -208,7 +208,7 @@
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1292,
+      "searchDuration": 637,
       "useProxy": true
     },
     {
@@ -216,7 +216,7 @@
       "api": "https://hhzyapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "no_results",
-      "searchDuration": 496,
+      "searchDuration": 234,
       "useProxy": true
     },
     {
@@ -224,7 +224,7 @@
       "api": "https://api.apibdzy.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 648,
+      "searchDuration": 515,
       "useProxy": true
     },
     {
@@ -232,7 +232,7 @@
       "api": "https://lovedan.net/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1026,
+      "searchDuration": 788,
       "useProxy": true
     },
     {
@@ -240,7 +240,7 @@
       "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 2984,
+      "searchDuration": 1593,
       "useProxy": true
     },
     {
@@ -248,7 +248,7 @@
       "api": "https://cj.lziapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 316,
+      "searchDuration": 47,
       "useProxy": true
     },
     {
@@ -256,7 +256,7 @@
       "api": "https://zuidazy.me/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 748,
+      "searchDuration": 920,
       "useProxy": true
     },
     {
@@ -264,7 +264,7 @@
       "api": "https://api.wujinapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 206,
+      "searchDuration": 97,
       "useProxy": true
     },
     {
@@ -272,7 +272,7 @@
       "api": "https://wwzy.tv/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "no_results",
-      "searchDuration": 559,
+      "searchDuration": 439,
       "useProxy": true
     },
     {
@@ -280,7 +280,7 @@
       "api": "https://api.yzzy-api.com/inc/apijson.php",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 3667,
+      "searchDuration": 3451,
       "useProxy": true
     },
     {
@@ -288,7 +288,7 @@
       "api": "https://www.huyaapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "success",
-      "searchDuration": 1711,
+      "searchDuration": 1585,
       "useProxy": true
     },
     {
@@ -296,7 +296,7 @@
       "api": "https://cj.yayazy.net/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "no_results",
-      "searchDuration": 202,
+      "searchDuration": 92,
       "useProxy": true
     },
     {
@@ -304,7 +304,7 @@
       "api": "https://suoniapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "no_results",
-      "searchDuration": 195,
+      "searchDuration": 119,
       "useProxy": true
     },
     {
@@ -312,7 +312,7 @@
       "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "no_results",
-      "searchDuration": 195,
+      "searchDuration": 100,
       "useProxy": true
     },
     {
@@ -320,7 +320,7 @@
       "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
       "isAdult": false,
       "searchStatus": "no_results",
-      "searchDuration": 214,
+      "searchDuration": 93,
       "useProxy": true
     },
     {
@@ -336,7 +336,7 @@
       "api": "https://91md.me/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "no_results",
-      "searchDuration": 477,
+      "searchDuration": 438,
       "useProxy": true
     },
     {
@@ -344,7 +344,7 @@
       "api": "http://lbapiby.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 2241,
+      "searchDuration": 2134,
       "useProxy": true
     },
     {
@@ -352,7 +352,7 @@
       "api": "https://155api.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 1111,
+      "searchDuration": 1130,
       "useProxy": true
     },
     {
@@ -360,7 +360,7 @@
       "api": "https://apiyutu.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 691,
+      "searchDuration": 772,
       "useProxy": true
     },
     {
@@ -368,7 +368,7 @@
       "api": "http://fhapi9.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 1040,
+      "searchDuration": 1181,
       "useProxy": true
     },
     {
@@ -376,7 +376,7 @@
       "api": "https://apilsbzy1.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 705,
+      "searchDuration": 695,
       "useProxy": true
     },
     {
@@ -384,7 +384,7 @@
       "api": "https://www.yyzywcj.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "no_results",
-      "searchDuration": 471,
+      "searchDuration": 378,
       "useProxy": true
     },
     {
@@ -392,7 +392,7 @@
       "api": "https://api.xiaojizy.live/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 828,
+      "searchDuration": 634,
       "useProxy": true
     },
     {
@@ -400,7 +400,7 @@
       "api": "https://hsckzy.xyz/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 1646,
+      "searchDuration": 1581,
       "useProxy": true
     },
     {
@@ -408,7 +408,7 @@
       "api": "https://apidanaizi.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 422,
+      "searchDuration": 339,
       "useProxy": true
     },
     {
@@ -416,7 +416,7 @@
       "api": "https://jkunzyapi.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 1788,
+      "searchDuration": 1428,
       "useProxy": true
     },
     {
@@ -424,7 +424,7 @@
       "api": "https://lbapi9.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 1440,
+      "searchDuration": 1343,
       "useProxy": true
     },
     {
@@ -432,7 +432,7 @@
       "api": "https://Naixxzy.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 3121,
+      "searchDuration": 2993,
       "useProxy": true
     },
     {
@@ -440,7 +440,7 @@
       "api": "https://beiyong.slapibf.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 1936,
+      "searchDuration": 1623,
       "useProxy": true
     },
     {
@@ -448,7 +448,7 @@
       "api": "https://apilj.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 993,
+      "searchDuration": 785,
       "useProxy": true
     },
     {
@@ -456,7 +456,7 @@
       "api": "https://shayuapi.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 859,
+      "searchDuration": 743,
       "useProxy": true
     },
     {
@@ -472,7 +472,7 @@
       "api": "https://api.douapi.cc/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 529,
+      "searchDuration": 604,
       "useProxy": true
     },
     {
@@ -480,7 +480,7 @@
       "api": "https://api.ddapi.cc/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 248,
+      "searchDuration": 313,
       "useProxy": true
     },
     {
@@ -488,7 +488,7 @@
       "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 1595,
+      "searchDuration": 1750,
       "useProxy": true
     },
     {
@@ -496,7 +496,7 @@
       "api": "https://api.bwzyz.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 809,
+      "searchDuration": 780,
       "useProxy": true
     },
     {
@@ -504,7 +504,7 @@
       "api": "https://thzy1.me/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 907,
+      "searchDuration": 767,
       "useProxy": true
     },
     {
@@ -512,7 +512,7 @@
       "api": "https://www.jingpinx.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "no_results",
-      "searchDuration": 599,
+      "searchDuration": 430,
       "useProxy": true
     },
     {
@@ -520,7 +520,7 @@
       "api": "https://ckzy.me/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "no_results",
-      "searchDuration": 374,
+      "searchDuration": 176,
       "useProxy": true
     },
     {
@@ -528,7 +528,7 @@
       "api": "https://api.souavzyw.net/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 926,
+      "searchDuration": 789,
       "useProxy": true
     },
     {
@@ -536,7 +536,7 @@
       "api": "https://www.xxibaozyw.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 720,
+      "searchDuration": 407,
       "useProxy": true
     },
     {
@@ -544,7 +544,7 @@
       "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 1060,
+      "searchDuration": 720,
       "useProxy": true
     },
     {
@@ -552,7 +552,7 @@
       "api": "https://www.msnii.com/api/json.php",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 386,
+      "searchDuration": 213,
       "useProxy": true
     },
     {
@@ -560,7 +560,7 @@
       "api": "https://www.pgxdy.com/api/json.php",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 334,
+      "searchDuration": 176,
       "useProxy": true
     },
     {
@@ -568,7 +568,7 @@
       "api": "https://www.kxgav.com/api/json.php",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 427,
+      "searchDuration": 198,
       "useProxy": true
     },
     {
@@ -576,7 +576,7 @@
       "api": "https://xingba222.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 473,
+      "searchDuration": 362,
       "useProxy": true
     },
     {
@@ -584,7 +584,7 @@
       "api": "https://dadiapi.com/feifei",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 800,
+      "searchDuration": 492,
       "useProxy": true
     },
     {
@@ -592,7 +592,7 @@
       "api": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
       "isAdult": true,
       "searchStatus": "success",
-      "searchDuration": 573,
+      "searchDuration": 452,
       "useProxy": true
     },
     {
@@ -600,7 +600,7 @@
       "api": "https://aosikazy.com/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "no_results",
-      "searchDuration": 1408,
+      "searchDuration": 1160,
       "useProxy": true
     },
     {
@@ -608,7 +608,7 @@
       "api": "https://siwazyw.tv/api.php/provide/vod",
       "isAdult": true,
       "searchStatus": "mismatch",
-      "searchDuration": 545,
+      "searchDuration": 302,
       "useProxy": true
     }
   ]
