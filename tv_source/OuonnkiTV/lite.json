@@ -14,6 +14,13 @@
     "isEnabled": true
   },
   {
+    "id": "红牛资源",
+    "name": "红牛资源",
+    "url": "https://www.hongniuzy2.com/api.php/provide/vod",
+    "detailUrl": "https://www.hongniuzy2.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
     "id": "极速资源",
     "name": "极速资源",
     "url": "https://jszyapi.com/api.php/provide/vod",
@@ -28,13 +35,6 @@
     "isEnabled": true
   },
   {
-    "id": "暴风资源",
-    "name": "暴风资源",
-    "url": "https://bfzyapi.com/api.php/provide/vod",
-    "detailUrl": "https://bfzyapi.com/api.php/provide/vod",
-    "isEnabled": true
-  },
-  {
     "id": "百度云zy",
     "name": "百度云zy",
     "url": "https://api.apibdzy.com/api.php/provide/vod",
@@ -42,10 +42,10 @@
     "isEnabled": true
   },
   {
-    "id": "360 资源",
-    "name": "360 资源",
-    "url": "https://360zyzz.com/api.php/provide/vod",
-    "detailUrl": "https://360zyzz.com/api.php/provide/vod",
+    "id": "暴风资源",
+    "name": "暴风资源",
+    "url": "https://bfzyapi.com/api.php/provide/vod",
+    "detailUrl": "https://bfzyapi.com/api.php/provide/vod",
     "isEnabled": true
   },
   {
@@ -56,10 +56,17 @@
     "isEnabled": true
   },
   {
-    "id": "卧龙资源",
-    "name": "卧龙资源",
-    "url": "https://wolongzyw.com/api.php/provide/vod",
-    "detailUrl": "https://wolongzyw.com/api.php/provide/vod",
+    "id": "U酷影视",
+    "name": "U酷影视",
+    "url": "https://api.ukuapi88.com/api.php/provide/vod",
+    "detailUrl": "https://api.ukuapi88.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "360 资源",
+    "name": "360 资源",
+    "url": "https://360zyzz.com/api.php/provide/vod",
+    "detailUrl": "https://360zyzz.com/api.php/provide/vod",
     "isEnabled": true
   },
   {
@@ -70,10 +77,10 @@
     "isEnabled": true
   },
   {
-    "id": "红牛资源",
-    "name": "红牛资源",
-    "url": "https://www.hongniuzy2.com/api.php/provide/vod",
-    "detailUrl": "https://www.hongniuzy2.com/api.php/provide/vod",
+    "id": "卧龙资源",
+    "name": "卧龙资源",
+    "url": "https://wolongzyw.com/api.php/provide/vod",
+    "detailUrl": "https://wolongzyw.com/api.php/provide/vod",
     "isEnabled": true
   },
   {
@@ -88,13 +95,6 @@
     "name": "艾旦影视",
     "url": "https://lovedan.net/api.php/provide/vod",
     "detailUrl": "https://lovedan.net/api.php/provide/vod",
-    "isEnabled": true
-  },
-  {
-    "id": "无尽资源",
-    "name": "无尽资源",
-    "url": "https://api.wujinapi.me/api.php/provide/vod",
-    "detailUrl": "https://api.wujinapi.me/api.php/provide/vod",
     "isEnabled": true
   },
   {
