@@ -357,6 +357,7 @@
       "isAdult": true
     },
     "doudouzy.com": {
+      "_comment": " 不稳定 ",
       "name": "豆豆资源",
       "api": "https://api.douapi.cc/api.php/provide/vod",
       "detail": "https://doudouzy.com",
