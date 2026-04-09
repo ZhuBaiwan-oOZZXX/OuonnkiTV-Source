@@ -5,6 +5,10 @@ on:
     - cron: "0 22 * * *" # 每天北京时间早上6点运行 (UTC 22点)
   workflow_dispatch: # 支持手动触发
 
+concurrency:
+  group: update-tv-source-main
+  cancel-in-progress: false
+
 jobs:
   update-tv-source:
     runs-on: ubuntu-latest
@@ -15,6 +19,9 @@ jobs:
     steps:
       # 1️⃣ 检出仓库
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       # 2️⃣ 设置 Node.js 环境
       - name: Setup Node.js
@@ -26,6 +33,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Sync to latest main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
+
       # 4️⃣ 运行一键脚本
       - name: Run start script
         run: node start.js
@@ -33,32 +47,52 @@ jobs:
       # 5️⃣ 提交并推送生成的文件
       - name: Commit and push changes
         run: |
+          set -euo pipefail
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
           # 检查是否有文件变化
           if [ -z "$(git status --porcelain tv_source/)" ]; then
             echo "✅ 数据源没有变化，无需提交"
             exit 0
           fi
 
-          # 配置 Git
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # 把生成的文件暂存到临时目录
+          cp -r tv_source/ /tmp/tv_source_generated/
 
-          # 添加所有生成的文件
+          # 拉取最新 remote，确保基于最新状态提交，避免 push 冲突
+          git fetch origin main
+          git reset --hard origin/main
+
+          # 把生成的文件覆盖回来
+          cp -r /tmp/tv_source_generated/. tv_source/
+
+          # 再次检查变化（可能 remote 已被其他 run 更新为相同内容）
+          if [ -z "$(git status --porcelain tv_source/)" ]; then
+            echo "✅ 数据源与最新 remote 一致，无需提交"
+            exit 0
+          fi
+
           git add tv_source/
-
-          # 提交更新
           git commit -m "自动更新 TV 源数据 ($(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S CST'))"
 
-          # 推送到远程 main 分支
-          git push https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git HEAD:main
+          # 推送，带重试（最多3次），每次 push 前 rebase 到最新 remote 以避免冲突
+          for i in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main && git push origin HEAD:main && break
+            echo "⚠️ Push 失败，第 $i 次重试..."
+            sleep $((i * 3))
+            [ $i -eq 3 ] && echo "❌ 推送3次均失败" && exit 1
+          done
 
-      # 6️⃣ 上传 JSON 到 Cloudflare R2
+      # 6️⃣ 上传 JSON 文件到 Cloudflare R2
       - name: Upload to Cloudflare R2
-        run: |
-          npx wrangler r2 object put phimhay-sources/full.json --file=tv_source/OuonnkiTV/full.json --content-type=application/json
-          npx wrangler r2 object put phimhay-sources/full-noadult.json --file=tv_source/OuonnkiTV/full-noadult.json --content-type=application/json
-          npx wrangler r2 object put phimhay-sources/lite.json --file=tv_source/OuonnkiTV/lite.json --content-type=application/json
-          npx wrangler r2 object put phimhay-sources/adult.json --file=tv_source/OuonnkiTV/adult.json --content-type=application/json
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+        run: |
+          aws s3 sync tv_source/ s3://${{ secrets.CF_R2_BUCKET }}/ \
+            --endpoint-url https://${{ secrets.CF_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+            --no-progress
