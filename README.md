@@ -1,5 +1,7 @@
 # OuonnkiTV Source
 
+[English](README_en.md) | 简体中文
+
 将 MoonTV/LunaTV 视频源配置转换为 [OuonnkiTV](https://github.com/Ouonnki/OuonnkiTV) 视频源配置。
 
 ## 配置文件

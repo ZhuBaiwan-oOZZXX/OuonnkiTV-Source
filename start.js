@@ -46,11 +46,7 @@ function printConfig() {
   ];
 
   if (s.enable) {
-    items.push(
-      ['测速集数', s.episodeCount],
-      ['测速时长', `${s.duration}ms`],
-      ['测速并发', s.concurrent],
-    );
+    items.push(['测速集数', s.episodeCount], ['测速时长', `${s.duration}ms`], ['测速并发', s.concurrent]);
   }
 
   console.log('当前配置:');
