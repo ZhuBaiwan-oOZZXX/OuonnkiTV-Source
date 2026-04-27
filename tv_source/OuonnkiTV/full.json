@@ -21,6 +21,13 @@
     "isEnabled": true
   },
   {
+    "id": "wolongzyw-com",
+    "name": "卧龙资源",
+    "url": "https://wolongzyw.com/api.php/provide/vod",
+    "detailUrl": "https://wolongzyw.com",
+    "isEnabled": true
+  },
+  {
     "id": "www-maoyanzy-com",
     "name": "猫眼资源",
     "url": "https://api.maoyanapi.top/api.php/provide/vod",
@@ -263,6 +270,13 @@
     "name": "色猫资源",
     "url": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
     "detailUrl": "https://semaozy1.com",
+    "isEnabled": true
+  },
+  {
+    "id": "aosikazy-com",
+    "name": "奥斯卡",
+    "url": "https://aosikazy.com/api.php/provide/vod",
+    "detailUrl": "https://aosikazy.com",
     "isEnabled": true
   },
   {

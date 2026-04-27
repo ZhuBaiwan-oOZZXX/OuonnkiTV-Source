@@ -21,6 +21,13 @@
     "isEnabled": true
   },
   {
+    "id": "wolongzyw-com",
+    "name": "卧龙资源",
+    "url": "https://wolongzyw.com/api.php/provide/vod",
+    "detailUrl": "https://wolongzyw.com",
+    "isEnabled": true
+  },
+  {
     "id": "www-maoyanzy-com",
     "name": "猫眼资源",
     "url": "https://api.maoyanapi.top/api.php/provide/vod",

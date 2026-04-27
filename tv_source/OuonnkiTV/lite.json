@@ -1,16 +1,16 @@
 [
   {
+    "id": "wolongzyw-com",
+    "name": "卧龙资源",
+    "url": "https://wolongzyw.com/api.php/provide/vod",
+    "detailUrl": "https://wolongzyw.com",
+    "isEnabled": true
+  },
+  {
     "id": "iqiyizyapi-com",
     "name": "爱奇艺",
     "url": "https://iqiyizyapi.com/api.php/provide/vod",
     "detailUrl": "https://iqiyizyapi.com",
-    "isEnabled": true
-  },
-  {
-    "id": "www-subozy-com",
-    "name": "速播资源",
-    "url": "https://subocaiji.com/api.php/provide/vod",
-    "detailUrl": "https://www.subozy.com",
     "isEnabled": true
   },
   {
@@ -21,10 +21,10 @@
     "isEnabled": true
   },
   {
-    "id": "360zy-com",
-    "name": "360 资源",
-    "url": "https://360zyzz.com/api.php/provide/vod",
-    "detailUrl": "https://360zy.com",
+    "id": "www-subozy-com",
+    "name": "速播资源",
+    "url": "https://subocaiji.com/api.php/provide/vod",
+    "detailUrl": "https://www.subozy.com",
     "isEnabled": true
   },
   {
@@ -32,6 +32,20 @@
     "name": "虎牙资源",
     "url": "https://www.huyaapi.com/api.php/provide/vod",
     "detailUrl": "https://www.huyaapi.com",
+    "isEnabled": true
+  },
+  {
+    "id": "360zy-com",
+    "name": "360 资源",
+    "url": "https://360zyzz.com/api.php/provide/vod",
+    "detailUrl": "https://360zy.com",
+    "isEnabled": true
+  },
+  {
+    "id": "www-moduzy-net",
+    "name": "魔都资源",
+    "url": "https://www.mdzyapi.com/api.php/provide/vod",
+    "detailUrl": "https://www.moduzy.net",
     "isEnabled": true
   },
   {
@@ -46,13 +60,6 @@
     "name": "豆瓣资源",
     "url": "https://caiji.dbzy5.com/api.php/provide/vod",
     "detailUrl": "https://dbzy.tv",
-    "isEnabled": true
-  },
-  {
-    "id": "www-moduzy-net",
-    "name": "魔都资源",
-    "url": "https://www.mdzyapi.com/api.php/provide/vod",
-    "detailUrl": "https://www.moduzy.net",
     "isEnabled": true
   },
   {
