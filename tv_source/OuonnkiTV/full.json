@@ -133,6 +133,13 @@
     "isEnabled": true
   },
   {
+    "id": "www-yytv4-cc",
+    "name": "优优资源",
+    "url": "https://www.yytv4.cc/api.php/provide/vod",
+    "detailUrl": "https://www.yytv4.cc",
+    "isEnabled": true
+  },
+  {
     "id": "xiaojizy-live",
     "name": "小鸡资源",
     "url": "https://api.xiaojizy.live/provide/vod",
